@@ -1,6 +1,6 @@
 const badge = document.getElementById("site-env-badge");
 
-fetch("/api/site-env")
+fetch("/.netlify/functions/site-env")
   .then((res) => {
     if (!res.ok) throw new Error("SITE_ENV alınamadı");
     return res.json();
