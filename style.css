@@ -1,0 +1,222 @@
+:root {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --border: #e3e5ea;
+  --text: #1b1e26;
+  --text-muted: #5b6070;
+  --accent: #4f46e5;
+  --accent-soft: #eef0ff;
+  --header-bg: #12141c;
+  --header-text: #f4f5f7;
+  --header-muted: #b7bacb;
+  --code-bg: #f0f1f6;
+  --shadow: 0 1px 2px rgba(16, 18, 27, 0.04), 0 8px 24px rgba(16, 18, 27, 0.06);
+  --radius: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1117;
+    --surface: #171a23;
+    --border: #262a36;
+    --text: #e9eaf0;
+    --text-muted: #9298ac;
+    --accent: #8b85f7;
+    --accent-soft: #23213f;
+    --header-bg: #0a0b10;
+    --header-text: #f4f5f7;
+    --header-muted: #8b90a3;
+    --code-bg: #1e2230;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: clamp(2.5rem, 6vw, 4.5rem) 1.5rem clamp(2.5rem, 5vw, 3.5rem);
+  border-bottom: 1px solid var(--border);
+}
+
+header .header-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+header h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.9rem, 4vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.env-badge {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--header-muted);
+  border: 1px solid var(--header-muted);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  margin-left: 0.5rem;
+}
+
+.env-badge:empty {
+  display: none;
+}
+
+header p {
+  margin: 0;
+  max-width: 620px;
+  color: var(--header-muted);
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+}
+
+main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 2.5rem) 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem 1.75rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(16, 18, 27, 0.06), 0 14px 30px rgba(16, 18, 27, 0.09);
+}
+
+section#yolculuk {
+  grid-column: 1 / -1;
+}
+
+section h2 {
+  margin: 0 0 0.9rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+section h2::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+section p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.prompt-card h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.prompt-card p {
+  margin: 0 0 0.75rem;
+}
+
+.prompt-card p:last-child {
+  margin-bottom: 0;
+}
+
+.prompt-example {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 0 8px 8px 0;
+  padding: 0.75rem 1rem;
+  font-style: italic;
+  color: var(--text);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+li {
+  color: var(--text-muted);
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+li::before {
+  content: "\2192";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+code {
+  background: var(--code-bg);
+  color: var(--text);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.88em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+footer {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem 2.5rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  section#yolculuk {
+    grid-column: auto;
+  }
+}
