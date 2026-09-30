@@ -72,6 +72,96 @@
       </ul>
     </section>
 
+    <section id="claude-md" class="konu">
+      <h2>CLAUDE.md</h2>
+      <p>Claude Code her oturumun başında bu dosyayı okur. Proje açıklamasını, çalıştırma yöntemini, kuralları ve dokunulmaması gerekenleri buraya yazarım. Kısa, doğru ve güncel olmalı; yanlış ya da eski bir CLAUDE.md hiç olmamasından daha kötü olabilir.</p>
+      <div class="prompt-card">
+        <h3>Ne zaman kullanılır?</h3>
+        <p>Claude'u aynı konuda iki kez düzeltiyorsam, bunu CLAUDE.md'ye eklerim.</p>
+        <p class="prompt-example">
+          Örnek prompt: "Seni aynı konuda iki kez düzeltmem gerekti; bunu CLAUDE.md'ye kısa bir kural olarak ekle."
+        </p>
+        <p class="prompt-example">
+          Bizim projede: çalıştırma yöntemi, kontrol adımları, proje kuralları ve Netlify tuzağı yazıldı. Tuzak: <code>index.html</code> dosya olarak açılırsa Netlify Function çalışmaz.
+        </p>
+      </div>
+    </section>
+
+    <section id="slash-komutlar" class="konu">
+      <h2>Özel Slash Command'ler</h2>
+      <p>Tekrar kullandığım istekleri kısa komutlara dönüştürür. Bir kez yazarım, sonra tekrar tekrar kullanırım.</p>
+      <div class="prompt-card">
+        <h3>Ne zaman kullanılır?</h3>
+        <p>Aynı isteği sık sık yazıyorsam. Eğitim örneği: <code>/check</code> ile sayfadaki bozuk bağlantıları veya eksik menüleri kontrol etmek.</p>
+        <p class="prompt-example">
+          Örnek prompt: <code>/check</code>
+        </p>
+        <p class="prompt-example">
+          Bizim projede: <code>.claude/commands/check.md</code> ile <code>/check</code> oluşturuldu. Gerçek testte çalıştı ve tüm kontroller geçti.
+        </p>
+      </div>
+    </section>
+
+    <section id="hooks" class="konu">
+      <h2>Hooks</h2>
+      <p>Belirli bir olay olduğunda otomatik komut çalıştırır. Prompt bir istektir; hook ise belirlenen işlemin otomatik çalışmasını sağlar.</p>
+      <div class="prompt-card">
+        <h3>Ne zaman kullanılır?</h3>
+        <p>Dosya düzenlendikten sonra kontrol veya biçimlendirme gibi işlerin her seferinde kendiliğinden çalışmasını istediğimde.</p>
+        <p class="prompt-example">
+          Bizim projede: <code>PostToolUse</code> hook'u <code>Edit|Write</code> sonrası çalışır. Dosyalar: <code>.claude/settings.json</code> ve <code>.claude/hooks/check-project.mjs</code>.
+        </p>
+        <p class="prompt-example">
+          Gerçek test: projeler bölümünün ID'sini geçici olarak bozdum, hook hatayı otomatik yakaladı.
+        </p>
+      </div>
+    </section>
+
+    <section id="mcp" class="konu">
+      <h2>MCP</h2>
+      <p>Claude'a yeni araçlar ve bağlantılar kazandırır; harici sistemlerle çalışmasını sağlar.</p>
+      <div class="prompt-card">
+        <h3>Ne zaman kullanılır?</h3>
+        <p>Claude'un kendi başına ulaşamadığı harici bir sistemle çalışması gerektiğinde.</p>
+        <p class="prompt-example">
+          Örnek fikir: Claude'un harici bir sisteme bağlanıp onunla çalışması.
+        </p>
+        <p class="prompt-example">
+          Bu projede henüz uygulamadım.
+        </p>
+      </div>
+    </section>
+
+    <section id="subagents" class="konu">
+      <h2>Subagents</h2>
+      <p>Ana görev içindeki bazı işleri yardımcı agentlere ayırma yaklaşımıdır.</p>
+      <div class="prompt-card">
+        <h3>Ne zaman kullanılır?</h3>
+        <p>Belirli bir işi ayrı bir yardımcıya devretmek istediğimde.</p>
+        <p class="prompt-example">
+          Örnek fikir: ana görevin bir parçasını yardımcı bir agente vermek.
+        </p>
+        <p class="prompt-example">
+          Bu projede henüz uygulamadım.
+        </p>
+      </div>
+    </section>
+
+    <section id="agent-sdk" class="konu">
+      <h2>Agent SDK</h2>
+      <p>Claude'u bir program içerisinden yönetme ve iş akışına dahil etme yaklaşımıdır.</p>
+      <div class="prompt-card">
+        <h3>Ne zaman kullanılır?</h3>
+        <p>Claude'u elle değil, bir programın parçası olarak çalıştırmak istediğimde.</p>
+        <p class="prompt-example">
+          Örnek fikir: Claude'u bir programın içinden çağırıp kendi iş akışıma dahil etmek.
+        </p>
+        <p class="prompt-example">
+          Bu projede henüz uygulamadım.
+        </p>
+      </div>
+    </section>
+
   </main>
 
   <footer>

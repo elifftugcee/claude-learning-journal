@@ -119,6 +119,10 @@ section#yolculuk {
   grid-column: 1 / -1;
 }
 
+section.konu > p {
+  margin-bottom: 1rem;
+}
+
 section h2 {
   margin: 0 0 0.9rem;
   font-size: 1.15rem;
